@@ -14,8 +14,7 @@ function getTokens({ code, language }) {
 	let currentLine = [];
 
 	const recurse = (array, parentClass) => {
-		for (let i = 0; i < array.length; i++) {
-			const token = array[i];
+		array.forEach(token => {
 			if (Array.isArray(token.content)) {
 				const currentClass = parentClass.concat(token.type);
 				recurse(token.content, currentClass);
@@ -23,23 +22,16 @@ function getTokens({ code, language }) {
 				token.type = parentClass.concat(token.type).join(' ')
 				currentLine.push(token);
 			} else {
-				// let parsedWhiteSpace = token.replace(/\t/g, '\u00A0\u00A0\u00A0\u00A0');
-				// parsedWhiteSpace = parsedWhiteSpace.replace(/ /g, "\u00A0");
-				let parsedWhiteSpace = token;
-
-				console.log(parsedWhiteSpace.split("\n"));
-				
 				const type = parentClass.length > 0 ? parentClass.join(' ') : '';
-				if (!parsedWhiteSpace.includes("\n")) {
-					
-					currentLine.push(new Prism.Token(type, parsedWhiteSpace, undefined));
+				if (!token.includes("\n")) {
+					currentLine.push(new Prism.Token(type, token, undefined));
 				} else {
-					parsedWhiteSpace.split(/\r?\n/).forEach((el, index) => {
+					token.split(/\r?\n/).forEach((el, index) => {
 						// newline
 						currentLine.push(new Prism.Token(type, el, undefined));
 
 						// last split element is not a newline
-						if (index < parsedWhiteSpace.split(/\r?\n/).length - 1) {
+						if (index < token.split(/\r?\n/).length - 1) {
 							tokens.push(currentLine);
 							currentLine = [];
 						}
@@ -47,7 +39,7 @@ function getTokens({ code, language }) {
 
 				}
 			}
-		}
+		});
 	}
 
 	recurse(syntaxTree, []);
