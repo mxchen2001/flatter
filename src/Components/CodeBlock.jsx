@@ -75,7 +75,7 @@ function Code({ tokens }) {
 					return (
 						<pre className="code-line" role="presentation">
 							{
-							line.length == 1 && line[0].content === '' ? 
+							line.length === 1 && line[0].content === '' ? 
 								(<span>{"\n"}</span>) :
 								line.map((el, index) => renderSyntaxTreeEl(el))
 							}
