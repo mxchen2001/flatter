@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/flatter/static/css/main.a7a1f9de.css",
-    "main.js": "/flatter/static/js/main.cee21e56.js",
-    "index.html": "/flatter/index.html",
-    "main.a7a1f9de.css.map": "/flatter/static/css/main.a7a1f9de.css.map",
-    "main.cee21e56.js.map": "/flatter/static/js/main.cee21e56.js.map"
+    "main.css": "/static/css/main.a7a1f9de.css",
+    "main.js": "/static/js/main.cee21e56.js",
+    "index.html": "/index.html",
+    "main.a7a1f9de.css.map": "/static/css/main.a7a1f9de.css.map",
+    "main.cee21e56.js.map": "/static/js/main.cee21e56.js.map"
   },
   "entrypoints": [
     "static/css/main.a7a1f9de.css",
