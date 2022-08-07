@@ -14,8 +14,7 @@ function getTokens({ code, language }) {
 	let currentLine = [];
 
 	const recurse = (array, parentClass) => {
-		for (let i = 0; i < array.length; i++) {
-			const token = array[i];
+		array.forEach(token => {
 			if (Array.isArray(token.content)) {
 				const currentClass = parentClass.concat(token.type);
 				recurse(token.content, currentClass);
@@ -23,31 +22,23 @@ function getTokens({ code, language }) {
 				token.type = parentClass.concat(token.type).join(' ')
 				currentLine.push(token);
 			} else {
-				// let parsedWhiteSpace = token.replace(/\t/g, '\u00A0\u00A0\u00A0\u00A0');
-				// parsedWhiteSpace = parsedWhiteSpace.replace(/ /g, "\u00A0");
-				let parsedWhiteSpace = token;
-
-				console.log(parsedWhiteSpace.split("\n"));
-				
 				const type = parentClass.length > 0 ? parentClass.join(' ') : '';
-				if (!parsedWhiteSpace.includes("\n")) {
-					
-					currentLine.push(new Prism.Token(type, parsedWhiteSpace, undefined));
+				if (!token.includes("\n")) {
+					currentLine.push(new Prism.Token(type, token, undefined));
 				} else {
-					parsedWhiteSpace.split(/\r?\n/).forEach((el, index) => {
+					token.split(/\r?\n/).forEach((el, index) => {
 						// newline
 						currentLine.push(new Prism.Token(type, el, undefined));
 
 						// last split element is not a newline
-						if (index < parsedWhiteSpace.split(/\r?\n/).length - 1) {
+						if (index < token.split(/\r?\n/).length - 1) {
 							tokens.push(currentLine);
 							currentLine = [];
 						}
 					});
-
 				}
 			}
-		}
+		});
 	}
 
 	recurse(syntaxTree, []);
@@ -58,9 +49,6 @@ function getTokens({ code, language }) {
 
 function Code({ tokens }) {
 	const renderSyntaxTreeEl = (el) => {
-		// if (el.content === '') {
-		// 	return <span>{"\u00A0"}</span>;
-		// }
 		return (
 			<span className={el.type}>
 				{el.content}
@@ -71,13 +59,13 @@ function Code({ tokens }) {
 	return (
 		<>
 			{
-				tokens.map((line, i) => {
+				tokens.map(line => {
 					return (
 						<pre className="code-line" role="presentation">
 							{
-							line.length == 1 && line[0].content === '' ? 
-								(<span>{"\n"}</span>) :
-								line.map((el, index) => renderSyntaxTreeEl(el))
+								line.length === 1 && line[0].content === '' ?
+									(<span>{"\n"}</span>) :
+									line.map(el => renderSyntaxTreeEl(el))
 							}
 						</pre>
 					);
@@ -93,9 +81,6 @@ function CodeBlock(props) {
 	const language = props.language || 'c';
 	const title = props.title || '';
 
-	console.log(content);
-	console.log(language);
-
 	const tokens = getTokens({ code: content, language: language });
 
 	return (
@@ -103,9 +88,9 @@ function CodeBlock(props) {
 			<div className="code-block-wrapper">
 				<div className="code-block-top-bar">
 					<div className="circle-container">
-						<circle className="red" />
-						<circle className="yellow" />
-						<circle className="green" />
+						<span className="red" />
+						<span className="yellow" />
+						<span className="green" />
 					</div>
 					<title>{title}</title>
 				</div>
@@ -113,7 +98,7 @@ function CodeBlock(props) {
 					<code className="line-numbers">
 						{showLineNumbers &&
 							<>
-								{tokens.map((line, i) =>	 (<span>{i+1}</span>))}
+								{tokens.map((line, i) => (<span>{i + 1}</span>))}
 							</>
 						}
 					</code>
