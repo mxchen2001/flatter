@@ -65,20 +65,20 @@
        column-gap: 5px;
   position: absolute;
 }
-.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle {
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container span {
   width: 10px;
   height: 10px;
   border: solid 1px;
 }
-.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle.red {
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container span.red {
   background-color: #FF5F56;
   border-color: #E0443E;
 }
-.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle.yellow {
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container span.yellow {
   background-color: #FFBD2E;
   border-color: #DEA123;
 }
-.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle.green {
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container span.green {
   background-color: #27C93F;
   border-color: #1AAB29;
 }

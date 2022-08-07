@@ -36,7 +36,6 @@ function getTokens({ code, language }) {
 							currentLine = [];
 						}
 					});
-
 				}
 			}
 		});
@@ -50,9 +49,6 @@ function getTokens({ code, language }) {
 
 function Code({ tokens }) {
 	const renderSyntaxTreeEl = (el) => {
-		// if (el.content === '') {
-		// 	return <span>{"\u00A0"}</span>;
-		// }
 		return (
 			<span className={el.type}>
 				{el.content}
@@ -63,13 +59,13 @@ function Code({ tokens }) {
 	return (
 		<>
 			{
-				tokens.map((line, i) => {
+				tokens.map(line => {
 					return (
 						<pre className="code-line" role="presentation">
 							{
-							line.length === 1 && line[0].content === '' ? 
-								(<span>{"\n"}</span>) :
-								line.map((el, index) => renderSyntaxTreeEl(el))
+								line.length === 1 && line[0].content === '' ?
+									(<span>{"\n"}</span>) :
+									line.map(el => renderSyntaxTreeEl(el))
 							}
 						</pre>
 					);
@@ -85,9 +81,6 @@ function CodeBlock(props) {
 	const language = props.language || 'c';
 	const title = props.title || '';
 
-	console.log(content);
-	console.log(language);
-
 	const tokens = getTokens({ code: content, language: language });
 
 	return (
@@ -95,9 +88,9 @@ function CodeBlock(props) {
 			<div className="code-block-wrapper">
 				<div className="code-block-top-bar">
 					<div className="circle-container">
-						<circle className="red" />
-						<circle className="yellow" />
-						<circle className="green" />
+						<span className="red" />
+						<span className="yellow" />
+						<span className="green" />
 					</div>
 					<title>{title}</title>
 				</div>
@@ -105,7 +98,7 @@ function CodeBlock(props) {
 					<code className="line-numbers">
 						{showLineNumbers &&
 							<>
-								{tokens.map((line, i) =>	 (<span>{i+1}</span>))}
+								{tokens.map((line, i) => (<span>{i + 1}</span>))}
 							</>
 						}
 					</code>
