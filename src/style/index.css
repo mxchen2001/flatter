@@ -1,0 +1,202 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+            animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #282c34;
+  text-align: center;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* #202746 */
+/* #293256 */
+/* #5e6687 */
+/* #6b7394 */
+/* #898ea4 */
+/* #979db4 */
+/* #dfe2f1 */
+/* #f5f7ff */
+/* #c94922 */
+/* #c76b29 */
+/* #c08b30 */
+/* #ac9739 */
+/* #22a2c9 */
+/* #3d8fd1 */
+/* #6679cc */
+/* #9c637a */
+.code-block-root {
+  padding: 20px;
+}
+.code-block-root pre {
+  margin: 0 !important;
+}
+.code-block-root .code-block-wrapper {
+  color: white;
+  margin: auto;
+  max-width: 50rem;
+  background-color: #151718;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar {
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  margin: 12px;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar title {
+  display: inline-block;
+  min-height: 19px;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container {
+  display: grid;
+  grid-template-columns: 12px 12px 12px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  position: absolute;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle {
+  width: 10px;
+  height: 10px;
+  border: solid 1px;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle.red {
+  background-color: #FF5F56;
+  border-color: #E0443E;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle.yellow {
+  background-color: #FFBD2E;
+  border-color: #DEA123;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar .circle-container circle.green {
+  background-color: #27C93F;
+  border-color: #1AAB29;
+}
+.code-block-root .code-block-wrapper .code-block-top-bar title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+.code-block-root .code-block-wrapper .code-block-body-container {
+  display: flex;
+  min-height: 5rem;
+  background-color: #2b2b2b;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .line-numbers,
+.code-block-root .code-block-wrapper .code-block-body-container .right-border {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  text-align: right;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+   supported by Chrome, Edge, Opera and Firefox */
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body {
+  color: #DDF0FF;
+  padding: 6px;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  overflow: scroll;
+  scroll-padding-left: 6px;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line span {
+  display: inline-block;
+  white-space: pre;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .tag,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .doctype {
+  color: #8dc149;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .keyword {
+  color: #e37933;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .macro,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .function,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .builtin {
+  color: #06AED5;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .space,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .punctuation,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .operator {
+  color: #a8b6be;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .string {
+  color: #8dc149;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .l-value {
+  color: #cbcb41;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .comment {
+  color: #4d5a5e;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .r-value,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .script,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .number,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .boolean {
+  color: #a074c4;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .name.doctype,
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .attr-name {
+  color: #f55385;
+}
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .attr-value {
+  color: #519aba;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}/*# sourceMappingURL=index.css.map */

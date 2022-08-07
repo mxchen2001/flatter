@@ -1,0 +1,41 @@
+// Edit the sixteen color-value variables, and create your own syntax highlighter colorscheme
+$base00: hsl(229, 37%, 20%); /* #202746 */
+$base01: hsl(229, 35%, 25%); /* #293256 */
+$base02: hsl(228, 18%, 45%); /* #5e6687 */
+$base03: hsl(229, 16%, 50%); /* #6b7394 */
+$base04: hsl(229, 13%, 59%); /* #898ea4 */
+$base05: hsl(229, 16%, 65%); /* #979db4 */
+$base06: hsl(229, 40%, 91%); /* #dfe2f1 */
+$base07: hsl(229, 94%, 98%); /* #f5f7ff */
+$base08: hsl(14, 71%, 47%);; /* #c94922 */
+$base09: hsl(25, 66%, 47%);  /* #c76b29 */
+$base0A: hsl(38, 60%, 47%);  /* #c08b30 */
+$base0B: hsl(49, 50%, 45%);  /* #ac9739 */
+// $base0B: hsl(177, 50%,45%);  /* #39aca6 */ // alternative green
+$base0C: hsl(194, 71%, 46%); /* #22a2c9 */
+$base0D: hsl(207, 62%, 53%); /* #3d8fd1 */
+$base0E: hsl(229, 50%, 60%); /* #6679cc */
+$base0F: hsl(336, 22%, 50%); /* #9c637a */
+
+$red:     $base08;
+$orange:  $base09;
+$yellow:  $base0A;
+$green:   $base0B;
+$cyan:    $base0C;
+$blue:    $base0D;
+$violet:  $base0E;
+$magenta: $base0F;
+
+$base-color: #DDF0FF;
+
+$keyword-color: #e37933;
+$function-color: #06AED5; //#519aba;
+$special-character-color: #a8b6be;
+$comment-color: #4d5a5e;
+$string-color: #8dc149;
+$l-value-color: #cbcb41;
+$r-value-color: #a074c4;
+
+$tag-color: #8dc149;
+$attr-name-color: #f55385;
+$attr-value-color: #519aba;

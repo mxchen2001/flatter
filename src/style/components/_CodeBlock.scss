@@ -1,0 +1,155 @@
+@import '../constants/var';
+@import '../constants/mixin';
+
+$space-width : 7.15px;
+$line-height: 15px;
+
+
+.code-block-root {
+    pre {
+        margin: 0 !important;
+    }
+
+    padding: 20px;
+
+    .code-block-wrapper {
+        color: white;
+        margin: auto;
+        max-width: 50rem;
+        background-color: #151718;
+
+        .code-block-top-bar {
+            display: flex;
+            align-items: center;
+            padding-top: 12px;
+            margin: 12px;
+
+            title {
+                display: inline-block;
+                min-height: 19px;
+            }
+
+            .circle-container {
+                display: grid;
+                grid-template-columns: 12px 12px 12px;
+                column-gap: 5px;
+                position: absolute;
+
+                circle {
+                    width: 10px;
+                    height: 10px;
+                    border: solid 1px;
+
+                    &.red {
+                        background-color: #FF5F56;
+                        border-color: #E0443E;
+                    }
+
+                    &.yellow {
+                        background-color: #FFBD2E;
+                        border-color: #DEA123;
+                    }
+
+                    &.green {
+                        background-color: #27C93F;
+                        border-color: #1AAB29;
+                    }
+                }
+            }
+
+            title {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                overflow: hidden;
+            }
+        }
+
+        .code-block-body-container {
+            display: flex;
+            min-height: 5rem;
+            background-color: #2b2b2b;
+            
+            .line-numbers,
+            .right-border {
+                padding: 6px;
+                display: flex;
+                flex-direction: column;
+                font-family: monospace;
+                text-align: right;
+                @include noselect;
+            }
+
+            .code-block-body {
+                color: $base-color;
+                padding: 6px;
+                font-family: monospace;
+
+                display: flex;
+                flex-direction: column;
+
+                width: max-content;
+                overflow: scroll;
+                scroll-padding-left: 6px;
+                .code-line {
+                    span {
+                        display: inline-block;
+                        white-space: pre;
+                    }
+
+                    .tag,
+                    .doctype {
+                        color: $tag-color;
+                    }
+                    
+                    .keyword {
+                        color: $keyword-color;
+                    }
+
+                    .macro,
+                    .function,
+                    .builtin {
+                        color: $function-color;
+                    }
+
+                    .space,
+                    .punctuation,
+                    .operator {
+                        color: $special-character-color;
+                    }
+
+                    .string {
+                        color: $string-color;
+                    }
+
+                    .l-value {
+                        color: $l-value-color;
+                    }
+
+                    
+                    .comment {
+                        color: $comment-color;
+                    }
+                    
+
+                    .r-value,
+                    .script,
+                    .number,
+                    .boolean {
+                        color: $r-value-color;
+                    }
+
+                    
+                    .name.doctype,
+                    .attr-name {
+                        color: $attr-name-color;
+                    }
+
+                    .attr-value {
+                        color: $attr-value-color;
+                    }
+                }
+            }
+        }
+    }
+}
