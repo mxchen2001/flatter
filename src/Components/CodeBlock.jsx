@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Prism from "prismjs";
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-c';
@@ -15,10 +15,11 @@ function getTokens({ code, language }) {
 
 	const recurse = (array, parentClass) => {
 		array.forEach(token => {
+			console.log(token);
 			if (Array.isArray(token.content)) {
 				const currentClass = parentClass.concat(token.type);
 				recurse(token.content, currentClass);
-			} else if (token.constructor.name === 'Token') {
+			} else if (typeof token === 'object') {
 				token.type = parentClass.concat(token.type).join(' ')
 				currentLine.push(token);
 			} else if (typeof token === 'string') {
@@ -83,6 +84,14 @@ function CodeBlock(props) {
 
 	const tokens = getTokens({ code: content, language: language });
 
+	useEffect(() => {
+		window.addEventListener('click', function (evt) {
+			if (evt.detail === 3) {
+				alert('triple click!');
+			}
+		});
+	} , []);
+	
 	return (
 		<div className="code-block-root">
 			<div className="code-block-wrapper">
