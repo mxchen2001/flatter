@@ -21,9 +21,9 @@ function getTokens({ code, language }) {
 			} else if (token.constructor.name === 'Token') {
 				token.type = parentClass.concat(token.type).join(' ')
 				currentLine.push(token);
-			} else {
+			} else if (typeof token === 'string') {
 				const type = parentClass.length > 0 ? parentClass.join(' ') : '';
-				if (token.includes && !token.includes("\n")) {
+				if (!token.includes("\n")) {
 					currentLine.push(new Prism.Token(type, token, undefined));
 				} else {
 					token.split(/\r?\n/).forEach((el, index) => {
