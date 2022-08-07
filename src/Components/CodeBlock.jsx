@@ -23,7 +23,7 @@ function getTokens({ code, language }) {
 				currentLine.push(token);
 			} else {
 				const type = parentClass.length > 0 ? parentClass.join(' ') : '';
-				if (!token.includes("\n")) {
+				if (token.includes && !token.includes("\n")) {
 					currentLine.push(new Prism.Token(type, token, undefined));
 				} else {
 					token.split(/\r?\n/).forEach((el, index) => {
