@@ -1,7 +1,7 @@
 {
+  "homepage": "https://www.flatter.page/",
   "name": "flatter",
   "version": "0.1.0",
-  "homepage": "https://mxchen2001.github.io/flatter",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
