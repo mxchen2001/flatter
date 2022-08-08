@@ -1,5 +1,11 @@
 # Flatter
 
+<p align="center">
+  <a href="https://www.flatter.page"><img src="./public/logo512.png" alt="Logo" width=320></a>
+  <br />
+</p>
+
+
 A React component library for building [Flatter](https://www.flatter.page) components.
 
 ## Usage
