@@ -1,7 +1,10 @@
 import React from "react";
 import Prism from "prismjs";
 import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-java';
@@ -90,10 +93,10 @@ function CodeBlock(props) {
 			<div className="code-block-wrapper">
 				<div className="code-block-top-bar">
 					<div className="circle-container">
-						<svg>
-							<rect className="red"/>
-							<rect x="16" className="yellow"/>
-							<rect x="32" className="green"/>
+						<svg width="48px" height="16px">
+							<rect width="12px" height="12px" fill="#FF5F56" stroke="#E0443E" strokeWidth="2px" x="2" y="2"/>
+							<rect width="12px" height="12px" fill="#FFBD2E" stroke="#DEA123" strokeWidth="2px" x="18" y="2"/>
+							<rect width="12px" height="12px" fill="#27C93F" stroke="#1AAB29" strokeWidth="2px" x="34" y="2"/>
 						</svg>
 					</div>
 					<title>{title}</title>

@@ -35,32 +35,6 @@ $line-height: 15px;
                 grid-template-columns: 12px 12px 12px;
                 column-gap: 5px;
                 position: absolute;
-
-                svg {
-                    width: 46px;
-                    height: 12px;
-                    
-                    rect {
-                        width: 12px;
-                        height: 12px;
-                        stroke-width: 2px;
-
-                        &.red {
-                            fill: #FF5F56;
-                            stroke:#E0443E;
-                        }
-                        
-                        &.yellow {
-                            fill: #FFBD2E;
-                            stroke:#DEA123;
-                        }
-                        
-                        &.green {
-                            fill: #27C93F;
-                            stroke:#1AAB29;
-                        }
-                    }
-                }
             }
 
             title {
