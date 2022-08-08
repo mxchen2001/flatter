@@ -19,7 +19,6 @@ function getTokens({ code, language }) {
 
 	const recurse = (array, parentClass) => {
 		array.forEach(token => {
-			console.log(token);
 			if (Array.isArray(token.content)) {
 				const currentClass = parentClass.concat(token.type);
 				recurse(token.content, currentClass);
@@ -47,7 +46,6 @@ function getTokens({ code, language }) {
 	}
 
 	recurse(syntaxTree, []);
-	console.log(tokens);
 
 	return tokens;
 }
