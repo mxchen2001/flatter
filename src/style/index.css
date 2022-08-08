@@ -7,10 +7,19 @@
   background-color: #252933;
   text-align: center;
   min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -21,138 +30,214 @@
 
 @-webkit-keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 .code-block-root {
   padding: 20px;
 }
+
 .code-block-root pre {
   margin: 0 !important;
 }
+
 .code-block-root .code-block-wrapper {
   color: white;
   margin: auto;
   max-width: 50rem;
   background-color: #151718;
 }
+
 .code-block-root .code-block-wrapper .code-block-top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 12px;
   margin: 12px;
 }
+
 .code-block-root .code-block-wrapper .code-block-top-bar title {
   display: inline-block;
   min-height: 19px;
 }
+
 .code-block-root .code-block-wrapper .code-block-top-bar .circle-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 12px 12px 12px;
-  -moz-column-gap: 5px;
-       column-gap: 5px;
+  -ms-grid-columns: 12px 12px 12px;
+      grid-template-columns: 12px 12px 12px;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
   position: absolute;
 }
+
 .code-block-root .code-block-wrapper .code-block-top-bar title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   overflow: hidden;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 5rem;
   background-color: #2b2b2b;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .line-numbers,
 .code-block-root .code-block-wrapper .code-block-body-container .right-border {
   padding: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: monospace;
   text-align: right;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-   supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body {
+  width: 100% !important;
   color: #DDF0FF;
   padding: 6px;
   font-family: monospace;
+  /* Track and corner*/
+  /* Handle */
+  /* Handle on hover */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   overflow: scroll;
   scroll-padding-left: 6px;
 }
+
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body::-webkit-scrollbar {
+  background: #2b2b2b;
+  width: 5px;
+  height: 5px;
+}
+
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body::-webkit-scrollbar-track, .code-block-root .code-block-wrapper .code-block-body-container .code-block-body::-webkit-scrollbar-corner {
+  background: #2b2b2b;
+}
+
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.code-block-root .code-block-wrapper .code-block-body-container .code-block-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line span {
   display: inline-block;
   white-space: pre;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .class-name,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .parameter {
   color: #cbcb41;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .tag,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .doctype {
   color: #8dc149;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .keyword {
   color: #e37933;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .macro,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .function,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .builtin {
   color: #06AED5;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .space,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .punctuation,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .operator {
   color: #a8b6be;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .string {
   color: #8dc149;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .comment {
   color: #4d5a5e;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .script,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .number,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .boolean {
   color: #a074c4;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .name.doctype,
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .attr-name {
   color: #f55385;
 }
+
 .code-block-root .code-block-wrapper .code-block-body-container .code-block-body .code-line .attr-value {
   color: #519aba;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}/*# sourceMappingURL=index.css.map */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,3 +1,5 @@
+@import './var';
+
 @mixin noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -6,4 +8,28 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    background: $primary-color-2;
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track and corner*/
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-corner {
+    background: $primary-color-2;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  } 
 }

@@ -48,7 +48,7 @@ $line-height: 15px;
         .code-block-body-container {
             display: flex;
             min-height: 5rem;
-            background-color: #2b2b2b;
+            background-color: $primary-color-2;
             
             .line-numbers,
             .right-border {
@@ -61,9 +61,11 @@ $line-height: 15px;
             }
 
             .code-block-body {
+                width: 100% !important;
                 color: $base-color;
                 padding: 6px;
                 font-family: monospace;
+                @include scrollbar;
 
                 display: flex;
                 flex-direction: column;
