@@ -3,7 +3,7 @@ import CodeBlock from './Components/CodeBlock';
 const JSXCODE = `import React from 'react';
 import './App.css';
 
-function App() {
+function App(props) {
   const a = 0;
 
   return (
@@ -103,6 +103,18 @@ const PYCODE = `def lev(s1, s2):
           
   return opt[n][m]`;
 
+const JAVACODE = `import java.util.Scanner;
+
+class MyClass {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);
+    System.out.println("Enter username");
+
+    String userName = myObj.nextLine();
+    System.out.println("Username is: " + userName);
+  }
+}`;
+
 function App() {
   return (
     <div className="App">
@@ -110,10 +122,11 @@ function App() {
         Code Block
       </header>
       <CodeBlock content={CCODE} language="c" title="HelloWorld.c"/>
-      <CodeBlock content={CCODE} language="c" showLineNumbers={true} title="With Line Numbers"/>
+      <CodeBlock content={CCODE} language="c" title="With Line Numbers" showLineNumbers={true}/>
       <CodeBlock content={JSXCODE} language="jsx" title="App.jsx"/>
       <CodeBlock content={HTMLCODE} language="html" title="index.html"/>
       <CodeBlock content={PYCODE} language="python" title="Levenshtein.py"/>
+      <CodeBlock content={JAVACODE} language="java" title="Scanner.java" showLineNumbers={true}/>
       <header className="App-header">
         More Coming
       </header>

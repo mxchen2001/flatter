@@ -4,6 +4,7 @@ import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-java';
 
 
 function getTokens({ code, language }) {
@@ -84,22 +85,16 @@ function CodeBlock(props) {
 
 	const tokens = getTokens({ code: content, language: language });
 
-	useEffect(() => {
-		window.addEventListener('click', function (evt) {
-			if (evt.detail === 3) {
-				alert('triple click!');
-			}
-		});
-	} , []);
-	
 	return (
 		<div className="code-block-root">
 			<div className="code-block-wrapper">
 				<div className="code-block-top-bar">
 					<div className="circle-container">
-						<span className="red" />
-						<span className="yellow" />
-						<span className="green" />
+						<svg>
+							<rect className="red"/>
+							<rect x="16" className="yellow"/>
+							<rect x="32" className="green"/>
+						</svg>
 					</div>
 					<title>{title}</title>
 				</div>

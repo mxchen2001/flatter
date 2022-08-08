@@ -1,0 +1,53 @@
+@import '../constants/var';
+
+@mixin syntax-colors {
+    .class-name,
+    .parameter {
+        color: $l-value-color;
+    }
+
+    .tag,
+    .doctype {
+        color: $tag-color;
+    }
+    
+    .keyword {
+        color: $keyword-color;
+    }
+    
+    .macro,
+    .function,
+    .builtin {
+        color: $function-color;
+    }
+    
+    .space,
+    .punctuation,
+    .operator {
+        color: $special-character-color;
+    }
+    
+    .string {
+        color: $string-color;
+    }
+    
+    .comment {
+        color: $comment-color;
+    }
+    
+    .script,
+    .number,
+    .boolean {
+        color: $r-value-color;
+    }
+    
+    
+    .name.doctype,
+    .attr-name {
+        color: $attr-name-color;
+    }
+    
+    .attr-value {
+        color: $attr-value-color;
+    }
+}

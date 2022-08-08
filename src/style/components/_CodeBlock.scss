@@ -1,5 +1,6 @@
 @import '../constants/var';
 @import '../constants/mixin';
+@import './syntaxHighlighting';
 
 $space-width : 7.15px;
 $line-height: 15px;
@@ -35,24 +36,29 @@ $line-height: 15px;
                 column-gap: 5px;
                 position: absolute;
 
-                span {
-                    width: 10px;
-                    height: 10px;
-                    border: solid 1px;
+                svg {
+                    width: 46px;
+                    height: 12px;
+                    
+                    rect {
+                        width: 12px;
+                        height: 12px;
+                        stroke-width: 2px;
 
-                    &.red {
-                        background-color: #FF5F56;
-                        border-color: #E0443E;
-                    }
-
-                    &.yellow {
-                        background-color: #FFBD2E;
-                        border-color: #DEA123;
-                    }
-
-                    &.green {
-                        background-color: #27C93F;
-                        border-color: #1AAB29;
+                        &.red {
+                            fill: #FF5F56;
+                            stroke:#E0443E;
+                        }
+                        
+                        &.yellow {
+                            fill: #FFBD2E;
+                            stroke:#DEA123;
+                        }
+                        
+                        &.green {
+                            fill: #27C93F;
+                            stroke:#1AAB29;
+                        }
                     }
                 }
             }
@@ -97,57 +103,7 @@ $line-height: 15px;
                         white-space: pre;
                     }
 
-                    .tag,
-                    .doctype {
-                        color: $tag-color;
-                    }
-                    
-                    .keyword {
-                        color: $keyword-color;
-                    }
-
-                    .macro,
-                    .function,
-                    .builtin {
-                        color: $function-color;
-                    }
-
-                    .space,
-                    .punctuation,
-                    .operator {
-                        color: $special-character-color;
-                    }
-
-                    .string {
-                        color: $string-color;
-                    }
-
-                    .l-value {
-                        color: $l-value-color;
-                    }
-
-                    
-                    .comment {
-                        color: $comment-color;
-                    }
-                    
-
-                    .r-value,
-                    .script,
-                    .number,
-                    .boolean {
-                        color: $r-value-color;
-                    }
-
-                    
-                    .name.doctype,
-                    .attr-name {
-                        color: $attr-name-color;
-                    }
-
-                    .attr-value {
-                        color: $attr-value-color;
-                    }
+                    @include syntax-colors;
                 }
             }
         }
